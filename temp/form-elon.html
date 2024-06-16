@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add your custom styles for the form here */
+        .ticket-form-box {
+            width: 80%;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #bebebe;
+            border-radius: 10px;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .form-heading {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .ticket-input {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .total-cost {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .bottom-button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <form class="ticket-form-box">
+        <div class="form-heading">Bet For Elon</div>
+        <label for="ticketAmount">Number of Tickets:</label>
+        <input type="number" id="ticketAmount" class="ticket-input" min="1" step="1" required>
+        
+        <div class="total-cost">
+            Total Cost: <span id="totalCost">$0</span>
+        </div>
+        
+        <button type="submit" class="bottom-button">Purchase Tickets</button>
+    </form>
+    
+    <script>
+        const ticketAmountInput = document.getElementById('ticketAmount');
+        const totalCostElement = document.getElementById('totalCost');
+        
+        ticketAmountInput.addEventListener('input', updateTotalCost);
+        ticketAmountInput.addEventListener('change', updateTotalCost);
+        
+        function updateTotalCost() {
+            const ticketAmount = ticketAmountInput.valueAsNumber;
+            const ticketCost = 0.1;
+            const totalCost = ticketAmount * ticketCost;
+            totalCostElement.textContent = `$${totalCost.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

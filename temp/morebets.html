@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .category-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            background-color: #f5f5f5;
+        }
+
+        .bet-box {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        .bet-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .bet-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="category-box">
+        <h3>1: Two-Way Bet</h3>
+        <div class="bet-box">
+            <div class="bet-text">Elon wins the match</div>
+            <button class="bet-button" onclick="redirectToBetForm('Two-way bet', 'Elon wins the match')">Place Bet</button>
+        </div>
+        <div class="bet-box">
+            <div class="bet-text">Mark wins the match</div>
+            <button class="bet-button" onclick="redirectToBetForm('Two-way bet', 'Mark wins the match')">Place Bet</button>
+        </div>
+    </div>
+
+    <div class="category-box">
+        <h3>2: Three-Way Bet</h3>
+        <div class="bet-box">
+            <div class="bet-text">Elon wins the match</div>
+            <button class="bet-button" onclick="redirectToBetForm('Three-way bet', 'Elon wins the match')">Place Bet</button>
+        </div>
+        <div class="bet-box">
+            <div class="bet-text">The match is a tie</div>
+            <button class="bet-button" onclick="redirectToBetForm('Three-way bet', 'The match is a tie')">Place Bet</button>
+        </div>
+        <div class="bet-box">
+            <div class="bet-text">Mark wins the match</div>
+            <button class="bet-button" onclick="redirectToBetForm('Three-way bet', 'Mark wins the match')">Place Bet</button>
+        </div>
+    </div>
+
+    <div class="category-box">
+        <h3>3: Round Bets</h3>
+        <div class="bet-box">
+            <div class="bet-text">Elon wins in round 1</div>
+            <button class="bet-button" onclick="redirectToBetForm('Round 1', 'Elon wins in round 1')">Place Bet</button>
+        </div>
+        <div class="bet-box">
+            <div class="bet-text">Elon wins in round 2</div>
+            <button class="bet-button" onclick="redirectToBetForm('Round 2', 'Elon wins in round 2')">Place Bet</button>
+        </div>
+        <div class="bet-box">
+            <div class="bet-text">Elon wins in round 3</div>
+            <button class="bet-button" onclick="redirectToBetForm('Round 3', 'Elon wins in round 3')">Place Bet</button>
+        </div>
+        <div class="bet-box">
+            <div class="bet-text">Mark wins in round 1</div>
+            <button class="bet-button" onclick="redirectToBetForm('Round 1', 'Mark wins in round 1')">Place Bet</button>
+        </div>
+        <div class="bet-box">
+            <div class="bet-text">Mark wins in round 2</div>
+            <button class="bet-button" onclick="redirectToBetForm('Round 2', 'Mark wins in round 2')">Place Bet</button>
+        </div>
+        <div class="bet-box">
+            <div class="bet-text">Mark wins in round 3</div>
+            <button class="bet-button" onclick="redirectToBetForm('Round 3', 'Mark wins in round 3')">Place Bet</button>
+        </div>
+        <div class="bet-box">
+            <div class="bet-text">The match goes above round 3</div>
+            <button class="bet-button" onclick="redirectToBetForm('Round 4', 'The match goes above round 3')">Place Bet</button>
+        </div>
+    </div>
+
+    <script>
+        function redirectToBetForm(type, chosen) {
+            window.location.href = `morebet-form.php?type=${encodeURIComponent(type)}&chosen=${encodeURIComponent(chosen)}`;
+        }
+    </script>
+</body>
+</html>
